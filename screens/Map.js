@@ -13,8 +13,21 @@ const HeatmapExample = () => {
 const [heatmapData, setheatmapData] = useState([]);
 useEffect(() => {
   async function dataset(){
-    const response=await context.getPoints();
-    setheatmapData(response);
+    // const response=await context.getPoints();
+    // console.log("printing response",response);
+    // setheatmapData(response);
+    const response = await context.getPoints();
+console.log("printing response", response);
+
+// Filter out objects with empty latitude or longitude
+const filteredResponse = response.filter(
+  (point) => point.latitude && point.longitude
+);
+
+console.log("filtered response", filteredResponse);
+
+// Set the heatmap data with the cleaned response
+setheatmapData(filteredResponse);
   }
   dataset();
 }, [])

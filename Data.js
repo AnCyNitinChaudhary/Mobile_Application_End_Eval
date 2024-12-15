@@ -145,6 +145,7 @@ const WaterState = ({ children }) => {
   //SOS
   const SOS = async (image,category, details, longitude, latitude) => {
     try {
+      console.log(name,phone,state,image,category,details,longitude,latitude);
       const response = await axios.post(`${BASE_URL}/SOS.json`, {
         name,
         phone,

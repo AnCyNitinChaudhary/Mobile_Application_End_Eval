@@ -211,7 +211,7 @@ export default function App() {
               name="Login"
               component={Login}
               options={{
-                title: "JalSamadhan",
+                title: "Flood Rescue",
                 headerLeft: () => {
                   return <Ionicons name="add-circle" color="white"></Ionicons>;
                 },

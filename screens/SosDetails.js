@@ -43,7 +43,7 @@ function DisasterReport({ navigation }) {
     })();
   }, []);
   const handleSubmit = async () => {
-    console.log(additionalDetails);
+    console.log("The details are here",additionalDetails);
     const response=await context.SOS(image,selectedCategory,additionalDetails,location.long,location.lat)
     setImage("");
     setAdditionalDetails("");
@@ -54,7 +54,7 @@ function DisasterReport({ navigation }) {
   };
 
   const categories = ["Flood", "Drought", "Cyclone"];
-console.log(location)
+console.log("Location",location)
   return (
     <View style={styles.container}>
       <Button title="Report Disaster" onPress={toggleModal} />
